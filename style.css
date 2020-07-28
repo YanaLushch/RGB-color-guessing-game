@@ -1,0 +1,64 @@
+body{
+    font-family: 'Lexend Zetta', sans-serif;
+    background-color: black;
+    margin: 0;
+    display: block;
+    text-transform: uppercase;
+}
+h1, h2, .context-menu{
+    color: white;
+    margin: 0;
+    padding: 10px 0 10px 0;
+}
+.result{
+    color: black;
+}
+.easy-hard{
+    color: white;
+    margin: 0;
+}
+.square {
+    width: 30%;
+    padding-bottom: 30%;
+    background-color: aqua;
+    margin: 1.66%;
+    float: left;
+    border-radius: 15px;
+}
+.container{
+    max-width: 600px;
+    margin: 0 auto;
+}
+.easy-hard, .context-menu{
+    display: flex;
+    justify-content: space-between;
+}
+.easy-hard{
+    width: 15%;
+}
+header{
+    text-align: center;
+    background-color: rgb(68, 130, 182);
+    margin: 0;
+}
+.context-menu{
+    background-color: rgb(255, 255 ,255);
+    height: 30px;
+    padding: 10px 30% 0 30%;
+    margin: 0 auto;
+}
+.hover-over{
+    background-color: rgb(68, 130, 182);
+    color:rgb(255, 255 ,255);
+}
+.invisible{
+    background-color: black;
+}
+button{
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: rgb(255, 255 ,255);
+    border: none;
+    color:rgb(68, 130, 182);
+}
