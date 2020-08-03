@@ -55,6 +55,7 @@ header{
     background-color: black;
 }
 button{
+    outline: none;
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;

@@ -13,15 +13,7 @@ var invisibleSquares = document.querySelectorAll('.invisibleSquare')
 rgbDisplay.textContent = pickedColor;
 
 easyLevel.addEventListener('click', function(){
-this.classList.add('hover-over');
-hardLevel.classList.remove('hover-over');
-numSquares = 3;
-colors = generateRandomColors(numSquares);
-pickedColor = pickColor();
-//display new picked color
-rgbDisplay.textContent = pickedColor;
-//change background-colors of header and squares
-header.style.background = 'rgb(68, 130, 182)';
+toggleLevels(this, 3);
 for (let i = 0; i < squares.length; i++) {
 // added initial random colors to the squares
 if (colors[i]) {
@@ -32,15 +24,7 @@ if (colors[i]) {
 };
 });
 hardLevel.addEventListener('click', function(){
-this.classList.add('hover-over');  
-easyLevel.classList.remove('hover-over');
-numSquares = 6;
-colors = generateRandomColors(numSquares);
-pickedColor = pickColor();
-//display new picked color
-rgbDisplay.textContent = pickedColor;
-//change background-colors of header and squares
-header.style.background = 'rgb(68, 130, 182)';
+toggleLevels(this, 6)
 for (let i = 0; i < squares.length; i++) {
 // added initial random colors to the squares
     squares[i].style.backgroundColor = colors[i];
@@ -82,12 +66,12 @@ playAgain.addEventListener('click', function(){
     squares[i].style.backgroundColor = colors[i];
     };
 })
-
-
-
-
-
-
+playAgain.addEventListener("mouseover", function(){
+    playAgain.classList.add('hover-over');
+})
+playAgain.addEventListener("mouseout", function(){
+    playAgain.classList.remove('hover-over');
+})
 
 function ChangeToCorrectColor (color) {
     for (let i = 0; i < squares.length; i++) {
@@ -108,5 +92,21 @@ function generateRandomColors(num){
 function randomColor(){
     const getN = () => Math.floor(Math.random()*256);
     return 'rgb('+ getN() +', ' + getN() +', '+ getN() +')'
-}
+};
+
+function toggleLevels(button, numSquares){
+    button.classList.add('hover-over');
+    if (button === hardLevel) {
+        easyLevel.classList.remove('hover-over');
+    } else if (button === easyLevel) {
+        hardLevel.classList.remove('hover-over');
+    }
+    colors = generateRandomColors(numSquares);
+    pickedColor = pickColor();
+    //display new picked color
+    rgbDisplay.textContent = pickedColor;
+    //change background-colors of header and squares
+    header.style.background = 'rgb(68, 130, 182)';
+};
+    
 
